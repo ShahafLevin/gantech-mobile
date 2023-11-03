@@ -7,26 +7,31 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login'),
-      ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.fromLTRB(30, 150, 40, 0),
+        // pad 100 pixels from the top
         child: Column(
           children: <Widget>[
             const TextField(
               decoration: InputDecoration(
-                labelText: 'Username',
+                labelText: 'שם משתמש',
+                hintTextDirection: TextDirection.rtl,
               ),
+              textAlign: TextAlign.right,
             ),
             const TextField(
               decoration: InputDecoration(
-                labelText: 'Password',
+                labelText: 'סיסמה',
+                textD: TextDirection.rtl,
               ),
+              textDirection: TextDirection.rtl,
               obscureText: true,
             ),
+            const SizedBox(
+              height: 30,
+            ),
             ElevatedButton(
-              child: const Text('Login'),
+              child: const Text('כניסה'),
               onPressed: () {
                 Navigator.push(
                   context,
