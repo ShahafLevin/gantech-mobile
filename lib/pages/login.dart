@@ -8,24 +8,32 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(30, 150, 40, 0),
+        padding: const EdgeInsets.fromLTRB(30, 200, 40, 0),
         // pad 100 pixels from the top
         child: Column(
           children: <Widget>[
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'שם משתמש',
-                hintTextDirection: TextDirection.rtl,
-              ),
-              textAlign: TextAlign.right,
-            ),
-            const TextField(
-              decoration: InputDecoration(
-                labelText: 'סיסמה',
-                textD: TextDirection.rtl,
-              ),
+            const Directionality(
               textDirection: TextDirection.rtl,
-              obscureText: true,
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'שם משתמש',
+                ),
+                textAlign: TextAlign.right,
+              ),
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Directionality(
+              textDirection: TextDirection.rtl,
+              child: TextField(
+                decoration: InputDecoration(
+                  labelText: 'סיסמה',
+                  hintTextDirection: TextDirection.rtl,
+                ),
+                textDirection: TextDirection.rtl,
+                obscureText: true,
+              ),
             ),
             const SizedBox(
               height: 30,
